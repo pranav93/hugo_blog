@@ -24,7 +24,6 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
         git submodule update --init --recursive
-        cd ..
         hugo
         cd public
         git checkout master
