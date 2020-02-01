@@ -1,5 +1,5 @@
-[submodule "themes"]
-	path = themes
+[submodule "themes/hugo-alageek-theme"]
+	path = themes/hugo-alageek-theme
 	url = git@github.com:pranav93/hugo-alageek-theme.git
 [submodule "public"]
 	path = public
