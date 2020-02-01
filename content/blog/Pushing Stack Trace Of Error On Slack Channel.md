@@ -1,7 +1,7 @@
 ---
 title: "Pushing Error Traceback On Slack Channel In Python"
 date: 2016-11-13T19:01:09+05:30
-draft: true
+draft: false
 tags: ["python", "traceback"]
 ---
 

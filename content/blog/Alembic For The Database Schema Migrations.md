@@ -1,7 +1,7 @@
 ---
 title: "Alembic For The Database Schema Migrations"
 date: 2019-11-09T19:01:09+05:30
-draft: true
+draft: false
 tags: ["mysql", "postgresql", "database", "python", "migration"]
 ---
 

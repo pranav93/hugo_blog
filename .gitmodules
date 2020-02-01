@@ -1,3 +1,7 @@
-[submodule "themes/hugo-alageek-theme"]
-	path = themes/hugo-alageek-theme
+[submodule "themes"]
+	path = themes
 	url = git@github.com:pranav93/hugo-alageek-theme.git
+[submodule "public"]
+	path = public
+	url = https://github.com/pranav93/pranav93.github.io.git
+	branch = master

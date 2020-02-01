@@ -1,7 +1,7 @@
 ---
 title: "Curious Case Of Mysql And Emojis"
 date: 2018-08-05T19:01:09+05:30
-draft: true
+draft: false
 tags: ["emojis", "mysql", "utf8mb4", "encoding", "database"]
 ---
 
