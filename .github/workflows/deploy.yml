@@ -15,6 +15,7 @@ jobs:
       env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
+        sudo snap install hugo
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
         git status
@@ -23,13 +24,13 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
         git submodule update --init --recursive
-        cd public
-        git checkout master
         cd ..
-        sudo snap install hugo
         hugo
         cd public
+        git checkout master
         git add .
+        git status
         dt=$(date "+%H:%M:%S %d/%m/%y")
         git commit -m "CI done $dt"
+        git status
         git push origin master -f
