@@ -3,5 +3,5 @@
 	url = git@github.com:pranav93/hugo-alageek-theme.git
 [submodule "public"]
 	path = public
-	url = https://github.com/pranav93/pranav93.github.io.git
+	url = git@github.com:pranav93/pranav93.github.io.git
 	branch = master
