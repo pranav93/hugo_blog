@@ -34,7 +34,6 @@ jobs:
         git add .
         git status
         dt=$(date "+%H:%M:%S %d/%m/%y")
-        git commit -m "CI done $dt"
-        git branch --set-upstream-to origin/master
+        echo `git commit -m "CI done $dt"`
         git status
         git push origin master -f
