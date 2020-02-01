@@ -18,13 +18,13 @@ toc = true
 posts_navigation = true
 progressively = true
 # flattr = "?"
-github = "?"
-gitlab = "?"
-linkedin = "?"
+github = "https://github.com/pranav93"
+# gitlab = "?"
+linkedin = "https://www.linkedin.com/in/ambhorepranav"
 # telegram = "?"
 # twitter = "?"
 # mastodon_url = "https://mastodon.url/?"
-email = "?@localhost"
+email = "ambhore.pranav@gmail.com"
 
 # [[params.best_posts]]
 # title = "Migrate to Hugo from Jekyll"
