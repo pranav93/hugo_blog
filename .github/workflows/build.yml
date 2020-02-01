@@ -1,4 +1,4 @@
-name: CI
+name: Build
 
 on:
   pull_request:
@@ -23,13 +23,5 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
         git submodule update --init --recursive
-        cd public
-        git checkout master
-        cd ..
         sudo snap install hugo
         hugo
-        cd public
-        git add .
-        dt=$(date "+%H:%M:%S %d/%m/%y")
-        git commit -m "CI done $dt"
-        git push origin master -f
