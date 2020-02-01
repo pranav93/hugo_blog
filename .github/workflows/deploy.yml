@@ -26,7 +26,7 @@ jobs:
         git submodule update --init --recursive
         cd public
         git checkout master
-        git pull master
+        git pull origin master
         cd ..
         hugo
         cd public
