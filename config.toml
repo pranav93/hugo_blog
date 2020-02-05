@@ -9,6 +9,7 @@ title = "Pranav P. Ambhore"
 # copyright = "© 2018 by Gökmen Görgen"
 # copyrightUrl = "https://gokmengorgen.net"
 # description = "Hugo alaGeek Theme"
+GA_MEASUREMENT_ID = "UA-87284198-1"
 faviconfile = "https://gokmengorgen.net/img/laughing-man-favicon.png"
 latestpostcount = 5
 logofile = "/p.jpg"
