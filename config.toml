@@ -4,7 +4,7 @@ canonifyurls = true
 paginate = 5
 theme = "hugo-alageek-theme"
 title = "Pranav P. Ambhore"
-DisqusShortname = "pranavambhore"
+DisqusShortname = "https-pranav93-github-io"
 
 [params]
 # copyright = "© 2018 by Gökmen Görgen"
