@@ -6,17 +6,15 @@ on:
       - master
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-18.04
-
     steps:
-    - uses: actions/checkout@v2
+
     - name: Run hugo
+    - uses: actions/checkout@v2
       with:
         ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
         submodules: 'true'
-      env:
-          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
     - run: |
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
