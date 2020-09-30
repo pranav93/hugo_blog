@@ -12,9 +12,10 @@ jobs:
     steps:
 
     - name: Checkout blog with submodules
-      uses: srt32/git-actions@v0.0.3
+      uses: actions/checkout@v2
       with:
-        args: git submodule update --init --recursive
+        ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
+        submodules: 'recursive'
     
     - name: Run hugo
       run: |
