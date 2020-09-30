@@ -7,7 +7,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
 
@@ -21,10 +21,10 @@ jobs:
       run: |
         git status
         sudo snap install hugo
-        hugo -D
+        hugo
         ls public/blog
 
-    - name: Run hugo
+    - name: Deploy hugo
       env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
