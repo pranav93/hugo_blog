@@ -12,16 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run hugo
+      with:
+        ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
+        submodules: 'true'
       env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
         git status
-        mkdir -p ~/.ssh
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-        ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-        git submodule update --init --recursive
         sudo snap install hugo
-        hugo
+        hugo -D
+        ls public/blog
