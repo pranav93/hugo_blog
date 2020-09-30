@@ -11,11 +11,11 @@ jobs:
     steps:
 
     - name: Run hugo
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
         submodules: 'true'
-    - run: |
+      run: |
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
         git status
