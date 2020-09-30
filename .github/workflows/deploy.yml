@@ -5,35 +5,42 @@ on:
     branches:
       - master
 jobs:
-  build:
+  deploy:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v2
+
+    - name: Checkout blog with submodules
+      uses: actions/checkout@v2
+      with:
+        ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
+        submodules: 'recursive'
+    
     - name: Run hugo
+      run: |
+        git status
+        sudo snap install hugo
+        hugo
+        ls public/blog
+
+    - name: Deploy hugo
       env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
-        sudo snap install hugo
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
-        git status
         mkdir -p ~/.ssh
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
-        git submodule update --init --recursive
-        cd public
-        git checkout master
-        git pull origin master
-        cd ..
         hugo
         cd public
-        git checkout master
-        git add .
+        ls -al
         git status
+        git init
+        git add .
         dt=$(date "+%H:%M:%S %d/%m/%y")
         echo `git commit -m "CI done $dt"`
-        git status
+        git remote add origin git@github.com:pranav93/pranav93.github.io.git
         git push origin master -f
