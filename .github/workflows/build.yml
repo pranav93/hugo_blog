@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
 
-    - name: Run hugo
+    - name: Checkout blog with submodules
       uses: actions/checkout@v2
       with:
         ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
         submodules: 'true'
+    - name: Run hugo
       run: |
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
