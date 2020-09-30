@@ -38,6 +38,9 @@ jobs:
         cd public
         ls -al
         git status
+        git submodule add -b master git@github.com:pranav93/pranav93.github.io.git 
+        git submodule init
+        git status
         # git checkout master
         # git add .
         # git status
