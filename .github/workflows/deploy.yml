@@ -12,9 +12,9 @@ jobs:
     steps:
 
     - name: Checkout blog with submodules
-      uses: textbook/git-checkout-submodule-action@master
+      uses: srt32/git-actions@v0.0.3
       with:
-        remote: true
+        args: git submodule update --init --recursive
     
     - name: Run hugo
       run: |
