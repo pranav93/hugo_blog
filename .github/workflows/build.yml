@@ -17,8 +17,6 @@ jobs:
         submodules: 'true'
     - name: Run hugo
       run: |
-        git config --global user.email "ambhore.pranav@gmail.com"
-        git config --global user.name "Hugo Blog"
         git status
         sudo snap install hugo
         hugo -D
