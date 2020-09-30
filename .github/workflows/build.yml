@@ -17,7 +17,7 @@ jobs:
         submodules: 'true'
       env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: |
+    - run: |
         git config --global user.email "ambhore.pranav@gmail.com"
         git config --global user.name "Hugo Blog"
         git status
