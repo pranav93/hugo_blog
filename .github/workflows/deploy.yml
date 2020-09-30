@@ -36,11 +36,12 @@ jobs:
         ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
         hugo
         cd public
+        ls -al
         git status
-        git checkout master
-        git add .
-        git status
-        dt=$(date "+%H:%M:%S %d/%m/%y")
-        echo `git commit -m "CI done $dt"`
-        git status
-        git push origin master -f
+        # git checkout master
+        # git add .
+        # git status
+        # dt=$(date "+%H:%M:%S %d/%m/%y")
+        # echo `git commit -m "CI done $dt"`
+        # git status
+        # git push origin master -f
