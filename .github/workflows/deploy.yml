@@ -12,7 +12,7 @@ jobs:
     steps:
 
     - name: Checkout blog with submodules
-      uses: actions/checkout@v2
+      uses: textbook/git-checkout-submodule-action@master
       with:
         ssh-key: '${{ secrets.SSH_PRIVATE_KEY }}'
         submodules: 'true'
