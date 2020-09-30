@@ -42,8 +42,7 @@ jobs:
         git add .
         git commit -m "Initial commit"
         git remote add origin git@github.com:pranav93/pranav93.github.io.git
-        git status
-        # git push origin master
+        git push origin master
         # git checkout master
         # git add .
         # git status
