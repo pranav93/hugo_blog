@@ -40,7 +40,7 @@ jobs:
         git status
         git init
         git add .
-        # dt=$(date "+%H:%M:%S %d/%m/%y")
-        # echo `git commit -m "CI done $dt"`
+        dt=$(date "+%H:%M:%S %d/%m/%y")
+        echo `git commit -m "CI done $dt"`
         git remote add origin git@github.com:pranav93/pranav93.github.io.git
         git push origin master -f
